@@ -1,0 +1,21 @@
+(define-library (fisherro seq-test)
+  (import (scheme base)
+	  (scheme write)
+	  (srfi 1)
+	  (srfi 26)
+	  (srfi 130)
+	  (chibi test)
+	  (fisherro seq))
+  (export run-tests)
+  (begin
+    (define (run-tests)
+      (test-begin "seq")
+      (test
+	'" 0,  2,  4,  6,  8, 10"
+	(seq (iota 6)
+	     (map (cute * <> 2) it)
+	     (map number->string it)
+	     (map (cute string-pad <> (apply max (map string-length it)))
+		  it)
+	     (string-join it ", ")))
+      (test-end))))
