@@ -126,18 +126,21 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;;; An example that only uses R7RS-small functions
 (pipe _
       "hello😀"
       (string->list _)
       (map char->integer _)
-      (map (cute number->string <> 16) _)
-      (map (lambda (x)
-	     (if (> 4 (string-length x))
-	       (string-pad x 4 #\0)
-	       x))
+      (map (lambda (s) (number->string s 16)) _)
+      (map (lambda (s)
+	     (let ((len (string-length s)))
+	       (if (< len 4)
+		 (string-append (make-string (- 4 len) #\0) s)
+		 s)))
 	   _)
-      (map (cute string-append "U+" <>) _)
-      (string-join _ " ")
+      (map (lambda (s) (string-append "U+" s)) _)
+      `(,(car _) ,@(map (lambda (s) (string-append " " s)) (cdr _)))
+      (apply string-append _)
       (display _)
       (newline))
 
