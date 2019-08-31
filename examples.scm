@@ -141,3 +141,11 @@
       (display _)
       (newline))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;;; Error tests
+;(pipe) ; Syntax error
+;(pipe it) ; Syntax error
+;(pipe it 10) ; Not an error
+
+

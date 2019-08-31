@@ -5,9 +5,11 @@
     (define-syntax pipe
       (syntax-rules ()
 	((pipe)
-	 (error "pipe requires a variable name and at least on expression"))
+	 (syntax-error
+	   "pipe requires a variable name and at least on expression"))
 	((pipe it)
-	 (error "pipe requires a variable name and at least on expression"))
+	 (syntax-error
+	   "pipe requires a variable name and at least on expression"))
 	; There's an argument that this case should be an error
 	((pipe it expression)
 	 expression)
