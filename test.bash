@@ -1,4 +1,4 @@
 #!/bin/bash
 
-chibi-scheme -m fisherro.thread-as-test -e '(run-tests)'
+chibi-scheme -m fisherro.pipe-test -e '(run-tests)'
 
