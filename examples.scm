@@ -144,6 +144,15 @@
       (display _)
       (newline))
 
+(pipe _
+      "Hello!"
+      (string->list _)
+      (map char->integer _)
+      (map number->string _)
+      (write _))
+(newline)
+; ("72" "101" "108" "108" "111" "33")
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;;; Error tests
