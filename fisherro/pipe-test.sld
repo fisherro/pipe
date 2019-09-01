@@ -1,7 +1,6 @@
 ;;; Minimize the user of SRFI's in the tests?
 (define-library (fisherro pipe-test)
   (import (scheme base)
-	  (scheme write)
 	  (chibi test)
 	  (fisherro pipe))
   (export run-tests)
