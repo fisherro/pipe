@@ -16,10 +16,6 @@ It is equivalent to...
            ...)
       (last-expression))
 
-## Example
-
-(TBD)
-
 ## Rambling
 
 Consider the following Scheme code:
