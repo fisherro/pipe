@@ -2,6 +2,8 @@
 
 R7RS syntax for pipelining a value through multiple expressions
 
+The package is available at [Snow Fort](http://snow-fort.org/)
+
 ## What?
 
     (import (fisherro pipe))
